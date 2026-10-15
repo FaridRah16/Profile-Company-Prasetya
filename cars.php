@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/data/cars.php';
 
-$page_title = 'Katalog Armada Mobil Lengkap';
+$page_title = 'Katalog - PT PRASETYA MULTICAR INDO';
 $active_nav = 'cars';
 $all_cars = get_all_cars();
 
@@ -82,57 +82,40 @@ require_once __DIR__ . '/includes/header.php';
                                 <img src="<?= htmlspecialchars($car['image']) ?>" alt="<?= htmlspecialchars($car['name']) ?>" loading="lazy">
                             </div>
 
-                            <!-- Car Title & Meta -->
+                            <!-- Car Title & Quick Specifications -->
                             <div class="car-title-box">
                                 <h3><?= htmlspecialchars($car['name']) ?></h3>
-                                <div class="car-meta-subtitle">
-                                    <i class="bi bi-tag-fill text-danger"></i> <?= htmlspecialchars($car['brand']) ?> • Tahun <?= $car['year'] ?>
-                                    <span class="badge bg-danger-subtle text-danger ms-auto"><?= htmlspecialchars($car['badge'] ?? 'Unit Prima') ?></span>
-                                </div>
-                            </div>
-
-                            <!-- Specs Grid -->
-                            <div class="car-specs-grid">
-                                <div class="spec-cell">
-                                    <div class="spec-icon"><i class="bi bi-people-fill"></i></div>
-                                    <div class="spec-meta">
-                                        <span class="lbl">Kapasitas</span>
-                                        <span class="val"><?= $car['seats'] ?> Kursi</span>
+                                <div class="car-specs-grid" aria-label="Spesifikasi <?= htmlspecialchars($car['name']) ?>">
+                                    <div class="spec-cell">
+                                        <div class="spec-icon"><i class="bi bi-people-fill"></i></div>
+                                        <div class="spec-meta">
+                                            <span class="val"><?= $car['seats'] ?> Seater</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="spec-cell">
-                                    <div class="spec-icon"><i class="bi bi-gear-fill"></i></div>
-                                    <div class="spec-meta">
-                                        <span class="lbl">Transmisi</span>
-                                        <span class="val"><?= htmlspecialchars($car['transmission']) ?></span>
+                                    <div class="spec-cell">
+                                        <div class="spec-icon"><i class="bi bi-gear-fill"></i></div>
+                                        <div class="spec-meta">
+                                            <span class="val"><?= htmlspecialchars($car['transmission']) ?></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="spec-cell">
-                                    <div class="spec-icon"><i class="bi bi-fuel-pump-fill"></i></div>
-                                    <div class="spec-meta">
-                                        <span class="lbl">Bahan Bakar</span>
-                                        <span class="val"><?= htmlspecialchars($car['fuel']) ?></span>
-                                    </div>
-                                </div>
-                                <div class="spec-cell">
-                                    <div class="spec-icon"><i class="bi bi-briefcase-fill"></i></div>
-                                    <div class="spec-meta">
-                                        <span class="lbl">Bagasi</span>
-                                        <span class="val"><?= $car['luggage_capacity'] ?> Koper</span>
+                                    <div class="spec-cell">
+                                        <div class="spec-icon"><i class="bi bi-fuel-pump-fill"></i></div>
+                                        <div class="spec-meta">
+                                            <span class="val"><?= htmlspecialchars($car['fuel']) ?></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <p class="text-muted small mb-3" style="line-height: 1.6;">
-                                <?= htmlspecialchars(mb_strimwidth($car['description'], 0, 115, '...')) ?>
-                            </p>
-                        </div>
+                            </div>
 
                         <!-- Footer Actions -->
                         <div class="car-footer-actions">
                             <div class="car-price-unit">
-                                <span class="amount"><?= format_rupiah($car['price_per_day']) ?></span>
-                                <span class="sub">/ 24 Jam</span>
+                                <span class="amount"><?= get_car_price_label($car) ?></span>
+                                <?php if (!empty($car['price_per_day'])): ?>
+                                    <span class="sub">/day</span>
+                                <?php endif; ?>
                             </div>
                             <div class="car-buttons-group">
                                 <a href="car-detail.php?id=<?= $car['id'] ?>" class="btn-card-detail">
@@ -150,41 +133,65 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- Syarat & Ketentuan Sewa Singkat -->
-<section class="py-5 bg-white border-top">
-    <div class="container">
-        <div class="row align-items-center g-4">
+<!-- Persyaratan Rental Mobil -->
+<section class="py-5 border-top" style="background: #f4f5f8;">
+    <div class="container py-3">
+        <div class="text-center mb-5">
+            <span class="section-badge">Informasi Penting</span>
+            <h2 class="section-title">Persyaratan Rental Mobil</h2>
+            <p class="section-subtitle">Siapkan dokumen sesuai jenis layanan yang Anda pilih.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
             <div class="col-lg-6">
-                <span class="section-badge">Informasi Penting</span>
-                <h3 class="fw-bold mb-3">Persyaratan Sewa Mudah & Fleksibel</h3>
-                <p class="text-muted">
-                    Kami memprioritaskan kemudahan dan kenyamanan pelanggan tanpa prosedur birokrasi berbelit-belit.
-                </p>
-                <div class="d-flex flex-column gap-2 mt-3">
-                    <div class="d-flex align-items-center gap-2">
-                        <i class="bi bi-check2-circle text-danger fs-5"></i>
-                        <span><strong>Lepas Kunci:</strong> Cukup e-KTP, SIM A aktif, & verifikasi akun media sosial / deposit.</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <i class="bi bi-check2-circle text-danger fs-5"></i>
-                        <span><strong>Dengan Supir:</strong> Cukup share lokasi penjemputan dan jadwal perjalanan Anda.</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <i class="bi bi-check2-circle text-danger fs-5"></i>
-                        <span><strong>Antar Jemput Unit:</strong> Siap diantar ke bandara (Soekarno Hatta / Halim) atau alamat rumah.</span>
-                    </div>
-                </div>
+                <article class="card h-100 p-4 p-md-5 rounded-4 shadow-sm" style="border: 2px solid #e8ef27;">
+                    <h3 class="h4 fw-bold mb-3" style="color: #273b7a;">Syarat Rental Mobil untuk Perusahaan</h3>
+                    <p class="text-muted mb-3">Syarat menggunakan layanan rental mobil bulanan untuk perusahaan:</p>
+                    <ul class="list-unstyled d-grid gap-2 mb-4">
+                        <li><i class="bi bi-check-circle-fill text-danger me-2"></i><em>Softcopy</em> akta perusahaan</li>
+                        <li><i class="bi bi-check-circle-fill text-danger me-2"></i>NIB (Nomor Induk Berusaha)</li>
+                        <li><i class="bi bi-check-circle-fill text-danger me-2"></i>NPWP perusahaan</li>
+                        <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Domisili perusahaan</li>
+                    </ul>
+
+                    <h4 class="h6 fw-bold text-dark mb-2">Untuk identitas penyewa:</h4>
+                    <ul class="list-unstyled d-grid gap-2 mb-0">
+                        <li><i class="bi bi-person-check-fill text-danger me-2"></i>KTP penyewa</li>
+                        <li><i class="bi bi-person-check-fill text-danger me-2"></i>KTP penjamin dari perusahaan</li>
+                        <li><i class="bi bi-person-check-fill text-danger me-2"></i>SIM pengguna kendaraan</li>
+                    </ul>
+                </article>
             </div>
 
             <div class="col-lg-6">
-                <div class="card p-4 border-0 rounded-4 shadow-sm" style="background: var(--brand-red-soft);">
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <i class="bi bi-whatsapp fs-1 text-danger"></i>
-                        <div>
-                            <h5 class="fw-bold mb-1 text-dark">Konsultasi Unit Armada?</h5>
-                            <p class="text-muted small mb-0">Hubungi tim kami untuk rekomendasi mobil yang paling cocok untuk rute Anda.</p>
-                        </div>
-                    </div>
+                <article class="card h-100 p-4 p-md-5 rounded-4 shadow-sm" style="border: 2px solid #e8ef27;">
+                    <h3 class="h4 fw-bold mb-3" style="color: #273b7a;">Syarat Rental Mobil Lepas Kunci untuk Perorangan</h3>
+                    <p class="text-muted mb-3">Lengkapi dokumen berikut untuk menggunakan layanan rental mobil:</p>
+
+                    <h4 class="h6 fw-bold text-dark mb-2">Foto dokumen:</h4>
+                    <ul class="list-unstyled d-grid gap-2 mb-4">
+                        <li><i class="bi bi-card-checklist text-danger me-2"></i>Dokumen penyewa (KTP, SIM A, PBB jika ada, KK atau buku nikah)</li>
+                        <li><i class="bi bi-card-checklist text-danger me-2"></i>Dokumen penjamin (KTP), jika diperlukan</li>
+                    </ul>
+
+                    <h4 class="h6 fw-bold text-dark mb-2">Jaminan yang diserahkan kepada kami:</h4>
+                    <ul class="list-unstyled d-grid gap-2 mb-4">
+                        <li><i class="bi bi-shield-check text-danger me-2"></i>Kendaraan (motor beserta STNK) minimal tahun 2018; atau</li>
+                        <li><i class="bi bi-shield-check text-danger me-2"></i>Deposit minimal Rp 2 juta</li>
+                    </ul>
+
+                    <p class="text-muted mb-0"><i class="bi bi-geo-alt-fill text-danger me-2"></i>Bersedia disurvei (khusus pelanggan baru).</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="card p-4 border-0 rounded-4 shadow-sm mt-4" style="background: var(--brand-red-soft);">
+            <div class="row align-items-center g-3">
+                <div class="col-lg">
+                    <h3 class="h5 fw-bold mb-1 text-dark">Ada pertanyaan tentang persyaratan?</h3>
+                    <p class="text-muted small mb-0">Hubungi admin untuk konsultasi pilihan armada dan proses penyewaan.</p>
+                </div>
+                <div class="col-lg-auto">
                     <a href="<?= build_whatsapp_link() ?>" target="_blank" class="btn-whatsapp-solid text-center justify-content-center">
                         <i class="bi bi-whatsapp"></i> Chat Admin Sekarang
                     </a>

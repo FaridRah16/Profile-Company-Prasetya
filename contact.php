@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/data/cars.php';
 
-$page_title = 'Kontak & Lokasi Kantor';
+$page_title = 'Kontak - PT PRASETYA MULTICAR INDO';
 $active_nav = 'contact';
 $all_cars = get_all_cars();
 

@@ -9,6 +9,60 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
 
+    const filterButtons = document.querySelectorAll('.filter-type-btn');
+    const catalogItems = document.querySelectorAll('.car-catalog-item');
+    const searchInput = document.querySelector('#carSearchInput');
+    const noCarsFoundAlert = document.querySelector('#noCarsFoundAlert');
+    let activeCatalogType = 'all';
+
+    const catalogTypes = {
+        mpv: ['mpv', 'lmpv'],
+        suv: ['suv', 'compact suv', 'lsuv', 'crossover'],
+        hatchback: ['hatchback']
+    };
+
+    const applyCatalogFilters = () => {
+        if (!catalogItems.length) return;
+
+        const searchTerm = (searchInput?.value || '').trim().toLowerCase();
+        const allowedTypes = catalogTypes[activeCatalogType] || [];
+        let visibleCount = 0;
+
+        catalogItems.forEach((item) => {
+            const carType = (item.dataset.type || '').toLowerCase();
+            const carName = (item.dataset.name || '').toLowerCase();
+            const matchesType = activeCatalogType === 'all' || allowedTypes.includes(carType);
+            const matchesSearch = !searchTerm || carName.includes(searchTerm) || carType.includes(searchTerm);
+            const isVisible = matchesType && matchesSearch;
+
+            item.style.display = isVisible ? '' : 'none';
+            if (isVisible) visibleCount += 1;
+        });
+
+        if (noCarsFoundAlert) {
+            noCarsFoundAlert.style.display = visibleCount ? 'none' : 'block';
+        }
+    };
+
+    filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            activeCatalogType = (button.dataset.type || 'all').toLowerCase();
+
+            filterButtons.forEach((filterButton) => {
+                const isActive = filterButton === button;
+                filterButton.classList.toggle('active', isActive);
+                filterButton.classList.toggle('btn-primary-red', isActive);
+                filterButton.classList.toggle('btn-outline-dark-custom', !isActive);
+            });
+
+            applyCatalogFilters();
+        });
+    });
+
+    if (searchInput) {
+        searchInput.addEventListener('input', applyCatalogFilters);
+    }
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const heroItems = document.querySelectorAll(
         '.hero-home .hero-title, .hero-home .text-danger-emphasis, .hero-home .hero-subtitle, .hero-home .d-flex.flex-wrap.gap-3'

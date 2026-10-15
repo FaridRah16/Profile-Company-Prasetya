@@ -52,9 +52,13 @@ require_once __DIR__ . '/includes/header.php';
                         <span class="badge bg-danger rounded-pill px-3 py-2"><?= htmlspecialchars($car['badge'] ?? 'Unit Prima') ?></span>
                     </div>
                     <p class="text-muted">
-                        <i class="bi bi-tag-fill text-danger me-1"></i> Brand: <strong><?= htmlspecialchars($car['brand']) ?></strong> • 
-                        Tahun Produksi: <strong><?= $car['year'] ?></strong> • 
-                        Warna: <strong><?= htmlspecialchars($car['color']) ?></strong>
+                        <i class="bi bi-tag-fill text-danger me-1"></i> Brand: <strong><?= htmlspecialchars($car['brand']) ?></strong>
+                        <?php if (!empty($car['year'])): ?>
+                            • Tahun Produksi: <strong><?= htmlspecialchars((string) $car['year']) ?></strong>
+                        <?php endif; ?>
+                        <?php if (!empty($car['color'])): ?>
+                            • Warna: <strong><?= htmlspecialchars($car['color']) ?></strong>
+                        <?php endif; ?>
                     </p>
                 </div>
 
@@ -92,7 +96,7 @@ require_once __DIR__ . '/includes/header.php';
                             <i class="bi bi-briefcase-fill"></i>
                             <div>
                                 <small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.68rem;">Kapasitas Bagasi</small>
-                                <strong class="text-dark"><?= $car['luggage_capacity'] ?> Koper</strong>
+                                <strong class="text-dark"><?= !empty($car['luggage_capacity']) ? $car['luggage_capacity'] . ' Koper' : '—' ?></strong>
                             </div>
                         </div>
                     </div>
@@ -150,8 +154,9 @@ require_once __DIR__ . '/includes/header.php';
             <div class="col-lg-4">
                 <div class="booking-sidebar-card">
                     <span class="section-badge mb-2">Simulasi & Reservasi</span>
-                    <h3 class="fw-bold text-dark mb-1"><?= format_rupiah($car['price_per_day']) ?></h3>
-                    <p class="text-muted small mb-4">Tarif dasar per 24 jam (Lepas Kunci)</p>
+                    <h3 class="fw-bold text-dark mb-1"><?= get_car_price_label($car) ?></h3>
+                    <?php if (!empty($car['price_per_day'])): ?>
+                    <p class="text-muted small mb-4">Tarif dasar per hari (Lepas Kunci)</p>
 
                     <!-- Interactive Calculator -->
                     <div class="mb-3">
@@ -178,6 +183,10 @@ require_once __DIR__ . '/includes/header.php';
                         </div>
                         <span class="text-muted small" style="font-size: 0.72rem;">*Harga net, belum termasuk BBM & tol jika memakai supir</span>
                     </div>
+
+                    <?php else: ?>
+                    <p class="text-muted small mb-4">Hubungi admin untuk informasi harga dan ketersediaan unit.</p>
+                    <?php endif; ?>
 
                     <!-- WhatsApp Booking CTA Button -->
                     <a id="calcWaBookingBtn" href="<?= build_whatsapp_link($car['name']) ?>" target="_blank" data-wa="<?= COMPANY_WHATSAPP ?>" class="btn-whatsapp-solid w-100 justify-content-center py-3 mb-3">

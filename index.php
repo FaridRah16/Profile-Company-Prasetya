@@ -22,8 +22,8 @@ require_once __DIR__ . '/includes/header.php';
                     <i class="bi bi-calendar-check text-danger me-1"></i> Berdiri sejak <?= COMPANY_ESTABLISHED ?> · <?= COMPANY_CATEGORY ?>
                 </p>
 
-                <p class="hero-subtitle mb-4">
-                    Prasetya Rent Car merupakan usaha yang bergerak di bidang jasa penyewaan kendaraan roda empat sejak tahun 2022. Berlokasi di Jalan Simpang 5 Pondok Petir, Sawangan, Depok, hadir memberikan solusi transportasi terbaik untuk kebutuhan pribadi, keluarga, maupun perusahaan.
+                <p class="hero-subtitle hero-tagline mb-4">
+                    Solusi Transportasi Terbaik dan Terpercaya untuk Setiap Perjalanan Anda
                 </p>
 
                 <div class="d-flex flex-wrap gap-3">
@@ -41,7 +41,122 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- Section 1: Profil Perusahaan Lengkap -->
+<!-- Section: Layanan Perusahaan -->
+<section class="py-5" style="background-color: var(--gray-50);">
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <span class="section-badge">Solusi Transportasi</span>
+            <h2 class="section-title">Layanan Perusahaan</h2>
+            <p class="section-subtitle">
+                Pilihan layanan rental mobil fleksibel yang dirancang khusus untuk kenyamanan pribadi maupun produktivitas perusahaan Anda.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <?php foreach ($services as $srv): ?>
+                <div class="col-lg-6">
+                    <div class="service-card-horizontal">
+                        <div class="service-icon-box <?= $srv['color'] ?>">
+                            <i class="bi <?= $srv['icon'] ?>"></i>
+                        </div>
+                        <div class="service-content-box">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <h4><?= htmlspecialchars($srv['title']) ?></h4>
+                                <span class="badge bg-light text-dark rounded-pill px-2 py-1 small fw-bold border"><?= htmlspecialchars($srv['badge']) ?></span>
+                            </div>
+                            <p><?= htmlspecialchars($srv['desc']) ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Armada Mobil Unggulan (Katalog) -->
+<section class="py-5" style="background-color: var(--gray-50);">
+
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <span class="section-badge">Armada Pilihan</span>
+            <h2 class="section-title">Armada Mobil Unggulan</h2>
+            <p class="section-subtitle">
+                Kendaraan prima yang selalu terawat berkala dengan standar kebersihan higienis, siap menemani setiap momen mobilitas Anda.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <?php foreach ($featured_cars as $car): ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="car-card-modern">
+                        <div>
+                            <!-- Car Image with Status & Badge -->
+                            <div class="car-image-container">
+                                <span class="car-type-badge"><?= htmlspecialchars($car['type']) ?></span>
+                                <span class="car-status-pill car-status-available">
+                                    <i class="bi bi-check-circle-fill me-1"></i> Tersedia
+                                </span>
+                                <img src="<?= htmlspecialchars($car['image']) ?>" alt="<?= htmlspecialchars($car['name']) ?>" loading="lazy">
+                            </div>
+
+                            <!-- Car Title & Quick Specifications -->
+                            <div class="car-title-box">
+                                <h3><?= htmlspecialchars($car['name']) ?></h3>
+                                <div class="car-specs-grid" aria-label="Spesifikasi <?= htmlspecialchars($car['name']) ?>">
+                                    <div class="spec-cell">
+                                        <div class="spec-icon"><i class="bi bi-people-fill"></i></div>
+                                        <div class="spec-meta">
+                                            <span class="val"><?= $car['seats'] ?> Seater</span>
+                                        </div>
+                                    </div>
+                                    <div class="spec-cell">
+                                        <div class="spec-icon"><i class="bi bi-gear-fill"></i></div>
+                                        <div class="spec-meta">
+                                            <span class="val"><?= htmlspecialchars($car['transmission']) ?></span>
+                                        </div>
+                                    </div>
+                                    <div class="spec-cell">
+                                        <div class="spec-icon"><i class="bi bi-fuel-pump-fill"></i></div>
+                                        <div class="spec-meta">
+                                            <span class="val"><?= htmlspecialchars($car['fuel']) ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+
+                        <!-- Footer Actions -->
+                        <div class="car-footer-actions">
+                            <div class="car-price-unit">
+                                <span class="amount"><?= get_car_price_label($car) ?></span>
+                                <?php if (!empty($car['price_per_day'])): ?>
+                                    <span class="sub">/day</span>
+                                <?php endif; ?>
+                            </div>
+                            <div class="car-buttons-group">
+                                <a href="car-detail.php?id=<?= $car['id'] ?>" class="btn-card-detail">
+                                    Detail <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="<?= build_whatsapp_link($car['name']) ?>" target="_blank" class="btn-card-wa" title="Sewa via WhatsApp">
+                                    <i class="bi bi-whatsapp"></i> Sewa
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="cars.php" class="btn-outline-dark-custom">
+                Lihat Semua Armada Mobil (<?= count($cars) ?> Unit) <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Profil Perusahaan Lengkap -->
 <section class="py-5 bg-white" id="profil-perusahaan">
     <div class="container py-4">
         <div class="row align-items-center g-5">
@@ -106,38 +221,6 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- Section 2: Layanan Perusahaan (Gambar Kedua) -->
-<section class="py-5" style="background-color: var(--gray-50);">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <span class="section-badge">Solusi Transportasi</span>
-            <h2 class="section-title">Layanan Perusahaan</h2>
-            <p class="section-subtitle">
-                Pilihan layanan rental mobil fleksibel yang dirancang khusus untuk kenyamanan pribadi maupun produktivitas perusahaan Anda.
-            </p>
-        </div>
-
-        <div class="row g-4">
-            <?php foreach ($services as $srv): ?>
-                <div class="col-lg-6">
-                    <div class="service-card-horizontal">
-                        <div class="service-icon-box <?= $srv['color'] ?>">
-                            <i class="bi <?= $srv['icon'] ?>"></i>
-                        </div>
-                        <div class="service-content-box">
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <h4><?= htmlspecialchars($srv['title']) ?></h4>
-                                <span class="badge bg-light text-dark rounded-pill px-2 py-1 small fw-bold border"><?= htmlspecialchars($srv['badge']) ?></span>
-                            </div>
-                            <p><?= htmlspecialchars($srv['desc']) ?></p>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
 <!-- Section: Komitmen Pelayanan -->
 <section class="py-5 bg-white">
 
@@ -164,102 +247,6 @@ require_once __DIR__ . '/includes/header.php';
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Section: Armada Mobil Unggulan (Katalog) -->
-<section class="py-5" style="background-color: var(--gray-50);">
-
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <span class="section-badge">Armada Pilihan</span>
-            <h2 class="section-title">Armada Mobil Unggulan</h2>
-            <p class="section-subtitle">
-                Kendaraan prima yang selalu terawat berkala dengan standar kebersihan higienis, siap menemani setiap momen mobilitas Anda.
-            </p>
-        </div>
-
-        <div class="row g-4">
-            <?php foreach ($featured_cars as $car): ?>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-card-modern">
-                        <div>
-                            <!-- Car Image with Status & Badge -->
-                            <div class="car-image-container">
-                                <span class="car-type-badge"><?= htmlspecialchars($car['type']) ?></span>
-                                <span class="car-status-pill car-status-available">
-                                    <i class="bi bi-check-circle-fill me-1"></i> Tersedia
-                                </span>
-                                <img src="<?= htmlspecialchars($car['image']) ?>" alt="<?= htmlspecialchars($car['name']) ?>" loading="lazy">
-                            </div>
-
-                            <!-- Car Title & Meta -->
-                            <div class="car-title-box">
-                                <h3><?= htmlspecialchars($car['name']) ?></h3>
-                                <div class="car-meta-subtitle">
-                                    <i class="bi bi-tag-fill text-danger"></i> <?= htmlspecialchars($car['brand']) ?> • Tahun <?= $car['year'] ?>
-                                    <span class="badge bg-danger-subtle text-danger ms-auto"><?= htmlspecialchars($car['badge'] ?? 'Unit Prima') ?></span>
-                                </div>
-                            </div>
-
-                            <!-- Specs Grid -->
-                            <div class="car-specs-grid">
-                                <div class="spec-cell">
-                                    <div class="spec-icon"><i class="bi bi-people-fill"></i></div>
-                                    <div class="spec-meta">
-                                        <span class="lbl">Kapasitas</span>
-                                        <span class="val"><?= $car['seats'] ?> Kursi</span>
-                                    </div>
-                                </div>
-                                <div class="spec-cell">
-                                    <div class="spec-icon"><i class="bi bi-gear-fill"></i></div>
-                                    <div class="spec-meta">
-                                        <span class="lbl">Transmisi</span>
-                                        <span class="val"><?= htmlspecialchars($car['transmission']) ?></span>
-                                    </div>
-                                </div>
-                                <div class="spec-cell">
-                                    <div class="spec-icon"><i class="bi bi-fuel-pump-fill"></i></div>
-                                    <div class="spec-meta">
-                                        <span class="lbl">Bahan Bakar</span>
-                                        <span class="val"><?= htmlspecialchars($car['fuel']) ?></span>
-                                    </div>
-                                </div>
-                                <div class="spec-cell">
-                                    <div class="spec-icon"><i class="bi bi-briefcase-fill"></i></div>
-                                    <div class="spec-meta">
-                                        <span class="lbl">Bagasi</span>
-                                        <span class="val"><?= $car['luggage_capacity'] ?> Koper</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Footer Actions -->
-                        <div class="car-footer-actions">
-                            <div class="car-price-unit">
-                                <span class="amount"><?= format_rupiah($car['price_per_day']) ?></span>
-                                <span class="sub">/ 24 Jam</span>
-                            </div>
-                            <div class="car-buttons-group">
-                                <a href="car-detail.php?id=<?= $car['id'] ?>" class="btn-card-detail">
-                                    Detail <i class="bi bi-arrow-right"></i>
-                                </a>
-                                <a href="<?= build_whatsapp_link($car['name']) ?>" target="_blank" class="btn-card-wa" title="Sewa via WhatsApp">
-                                    <i class="bi bi-whatsapp"></i> Sewa
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-
-        <div class="text-center mt-5">
-            <a href="cars.php" class="btn-outline-dark-custom">
-                Lihat Semua Armada Mobil (<?= count($cars) ?> Unit) <i class="bi bi-chevron-right"></i>
-            </a>
         </div>
     </div>
 </section>

@@ -233,6 +233,15 @@ a {
     margin-bottom: 34px;
 }
 
+.hero-home .hero-tagline {
+    max-width: 620px;
+    color: #fff;
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+}
+
 .hero-stats-wrapper {
     display: flex;
     gap: 30px;
@@ -508,10 +517,31 @@ a {
     gap: 6px;
 }
 
-/* Specs 4-Grid */
+.car-quick-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin: 10px 0 16px;
+    color: var(--gray-600);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.car-quick-specs span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.car-quick-specs i {
+    color: var(--brand-red);
+    font-size: 0.9rem;
+}
+
+/* Specs 3-Grid */
 .car-specs-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
     background: var(--gray-50);
     padding: 12px;
@@ -1619,9 +1649,9 @@ a {
         font-size: 1.4rem !important;
     }
 
-    /* Car card specs 1-col on very small */
+    /* Keep the three core specs in one row on very small screens */
     .car-specs-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 6px;
     }
 

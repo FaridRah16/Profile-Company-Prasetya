@@ -14,18 +14,18 @@ if (!defined('COMPANY_NAME')) {
                         <h4 class="text-white mb-0">PT PRASETYA MULTICAR INDO</h4>
                     </div>
 
-                    <p class="text-muted small pe-lg-4">
+                    <p class="text-white small pe-lg-4">
                         Penyedia layanan rental mobil terpercaya di wilayah Depok, Jakarta, Bogor, Tangerang, dan Bekasi. Hadir dengan armada terawat, bersih, wangi, dan jaminan kenyamanan perjalanan prima.
                     </p>
                     <div class="d-flex gap-2 mt-4">
                         <a href="<?= build_whatsapp_link() ?>" target="_blank" class="btn btn-sm btn-outline-light rounded-circle p-2" title="WhatsApp">
                             <i class="bi bi-whatsapp"></i>
                         </a>
-                        <a href="https://instagram.com" target="_blank" class="btn btn-sm btn-outline-light rounded-circle p-2" title="Instagram">
+                        <a href="https://www.instagram.com/prasetya.rent.car/" target="_blank" class="btn btn-sm btn-outline-light rounded-circle p-2" title="Instagram">
                             <i class="bi bi-instagram"></i>
                         </a>
-                        <a href="https://facebook.com" target="_blank" class="btn btn-sm btn-outline-light rounded-circle p-2" title="Facebook">
-                            <i class="bi bi-facebook"></i>
+                        <a href="https://www.tiktok.com/@prasetya.rent.car" target="_blank" class="btn btn-sm btn-outline-light rounded-circle p-2" title="Tiktok">
+                            <i class="bi bi-tiktok"></i>
                         </a>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ if (!defined('COMPANY_NAME')) {
         </div>
     </footer>
 
-    <!-- Include Floating WhatsApp -->
+    <!-- Include Floating Social Buttons -->
     <?php require_once __DIR__ . '/whatsapp-bubble.php'; ?>
 
     <!-- Bootstrap 5 JS Bundle -->
