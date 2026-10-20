@@ -267,6 +267,31 @@ $cars = [
         'features' => ['Kapasitas 5 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
     ],
     [
+        'id' => 4,
+        'name' => 'Wuling Almaz RS Pro Turbo',
+        'brand' => 'Wuling',
+        'type' => 'SUV',
+        'year' => 2023,
+        'color' => 'Abu-abu Modern',
+        'price_per_day' => 600000,
+        'status' => 'available',
+        'image' => 'assets/images/cars/Wuling Almaz RS Pro Turbo.png',
+        'seats' => 7,
+        'luggage_capacity' => 2,
+        'transmission' => 'Automatic',
+        'fuel' => 'Bensin',
+        'badge' => 'SUV Premium Turbo',
+        'description' => 'SUV flagship modern dengan Panoramic Sunroof megah, mesin 1.5L Turbocharged bertenaga responsif, kamera 360 derajat, dan fitur asisten suara canggih (WIND).',
+        'features' => [
+            'Panoramic Sunroof Mewah',
+            'Layar Sentuh 10.4 Inci Vertikal Canggih',
+            'Kamera 360 Derajat High Definition',
+            'Perintah Suara Bahasa Indonesia (WIND)',
+            'Advanced Driver Assistance System (ADAS)',
+            'Interior Kulit Sintetis Elegan'
+        ]
+    ],
+    [
         'id' => 20,
         'name' => 'Toyota Innova Reborn 2.4 G',
         'brand' => 'Toyota',
@@ -321,6 +346,24 @@ $cars = [
         'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
     ],
     [
+        'id' => 25,
+        'name' => 'Toyota Veloz HEV',
+        'brand' => 'Toyota',
+        'type' => 'LMPV',
+        'year' => null,
+        'color' => null,
+        'price_per_day' => 550000,
+        'status' => 'available',
+        'image' => 'assets/images/cars/Toyota Veloz HEV.png',
+        'seats' => 7,
+        'luggage_capacity' => null,
+        'transmission' => 'Automatic',
+        'fuel' => 'Bensin',
+        'badge' => 'Hybrid LMPV',
+        'description' => 'LMPV modern untuk perjalanan keluarga dan kebutuhan mobilitas sehari-hari.',
+        'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
+    ],
+    [
         'id' => 23,
         'name' => 'Hyundai Stargazer Prime',
         'brand' => 'Hyundai',
@@ -357,24 +400,6 @@ $cars = [
         'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
     ],
     [
-        'id' => 25,
-        'name' => 'Toyota Veloz HEV',
-        'brand' => 'Toyota',
-        'type' => 'LMPV',
-        'year' => null,
-        'color' => null,
-        'price_per_day' => 550000,
-        'status' => 'available',
-        'image' => 'assets/images/cars/Toyota Veloz HEV.png',
-        'seats' => 7,
-        'luggage_capacity' => null,
-        'transmission' => 'Automatic',
-        'fuel' => 'Bensin',
-        'badge' => 'Hybrid LMPV',
-        'description' => 'LMPV modern untuk perjalanan keluarga dan kebutuhan mobilitas sehari-hari.',
-        'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
-    ],
-    [
         'id' => 26,
         'name' => 'Honda City HB RS',
         'brand' => 'Honda',
@@ -393,24 +418,6 @@ $cars = [
         'features' => ['Kapasitas 5 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
     ],
     [
-        'id' => 27,
-        'name' => 'Toyota Avanza 1.5 G',
-        'brand' => 'Toyota',
-        'type' => 'LMPV',
-        'year' => null,
-        'color' => null,
-        'price_per_day' => 450000,
-        'status' => 'available',
-        'image' => 'assets/images/cars/Toyota Avanza 1.5 G.png',
-        'seats' => 7,
-        'luggage_capacity' => null,
-        'transmission' => 'Automatic',
-        'fuel' => 'Bensin',
-        'badge' => 'LMPV',
-        'description' => 'LMPV andal untuk kebutuhan keluarga, perjalanan wisata, dan mobilitas harian.',
-        'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
-    ],
-    [
         'id' => 28,
         'name' => 'Suzuki XL7 Hybrid',
         'brand' => 'Suzuki',
@@ -426,6 +433,24 @@ $cars = [
         'fuel' => 'Bensin',
         'badge' => 'LSUV Hybrid',
         'description' => 'LSUV nyaman untuk perjalanan keluarga dan mobilitas harian.',
+        'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
+    ],
+    [
+        'id' => 27,
+        'name' => 'Toyota Avanza 1.5 G',
+        'brand' => 'Toyota',
+        'type' => 'LMPV',
+        'year' => null,
+        'color' => null,
+        'price_per_day' => 450000,
+        'status' => 'available',
+        'image' => 'assets/images/cars/Toyota Avanza 1.5 G.png',
+        'seats' => 7,
+        'luggage_capacity' => null,
+        'transmission' => 'Automatic',
+        'fuel' => 'Bensin',
+        'badge' => 'LMPV',
+        'description' => 'LMPV andal untuk kebutuhan keluarga, perjalanan wisata, dan mobilitas harian.',
         'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
     ],
     [
@@ -535,31 +560,6 @@ $cars = [
         'badge' => 'Hatchback',
         'description' => 'Hatchback ringkas dan praktis untuk mobilitas perkotaan.',
         'features' => ['Kapasitas 5 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
-    ],
-    [
-        'id' => 4,
-        'name' => 'Wuling Almaz RS Pro Turbo',
-        'brand' => 'Wuling',
-        'type' => 'SUV',
-        'year' => 2023,
-        'color' => 'Abu-abu Modern',
-        'price_per_day' => 600000,
-        'status' => 'available',
-        'image' => 'assets/images/cars/Wuling Almaz RS Pro Turbo.png',
-        'seats' => 7,
-        'luggage_capacity' => 2,
-        'transmission' => 'Automatic',
-        'fuel' => 'Bensin',
-        'badge' => 'SUV Premium Turbo',
-        'description' => 'SUV flagship modern dengan Panoramic Sunroof megah, mesin 1.5L Turbocharged bertenaga responsif, kamera 360 derajat, dan fitur asisten suara canggih (WIND).',
-        'features' => [
-            'Panoramic Sunroof Mewah',
-            'Layar Sentuh 10.4 Inci Vertikal Canggih',
-            'Kamera 360 Derajat High Definition',
-            'Perintah Suara Bahasa Indonesia (WIND)',
-            'Advanced Driver Assistance System (ADAS)',
-            'Interior Kulit Sintetis Elegan'
-        ]
     ],
 ];
 
