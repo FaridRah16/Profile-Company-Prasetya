@@ -72,6 +72,140 @@ a {
     transition: var(--transition);
 }
 
+/* ===========================================================================
+   TERMS & CONDITIONS PAGE
+   =========================================================================== */
+.terms-page {
+    background: #f4f5f8;
+}
+
+.terms-intro {
+    padding: 48px 0 38px;
+}
+
+.terms-intro .section-badge {
+    margin-bottom: 12px;
+}
+
+.terms-intro .section-title {
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+}
+
+.terms-content {
+    padding: 0 0 56px;
+}
+
+.terms-card {
+    padding: 38px 40px;
+    background: var(--white);
+    border: 2px solid #e8ef27;
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.terms-card h2 {
+    margin: 0 0 12px;
+    color: #273b7a;
+    font-size: 1.28rem;
+    line-height: 1.35;
+}
+
+.terms-card h3 {
+    margin: 24px 0 8px;
+    color: var(--dark-900);
+    font-size: .92rem;
+    line-height: 1.4;
+    letter-spacing: 0;
+}
+
+.terms-card p,
+.terms-card li {
+    color: var(--dark-700);
+    font-size: .91rem;
+}
+
+.terms-card p {
+    margin-bottom: 12px;
+}
+
+.terms-card ul {
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.terms-card li {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+}
+
+.terms-card li i,
+.terms-note i {
+    flex: 0 0 auto;
+    color: var(--brand-red-light);
+    margin-top: 3px;
+    margin-right: 0;
+}
+
+.terms-note {
+    display: flex;
+    gap: 9px;
+    margin-top: 25px !important;
+    margin-bottom: 0 !important;
+}
+
+.terms-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--brand-red-soft);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.terms-contact h2 {
+    margin: 0 0 2px;
+    color: var(--dark-900);
+    font-size: 1.05rem;
+}
+
+.terms-contact p {
+    margin: 0;
+    color: var(--gray-500);
+    font-size: .78rem;
+}
+
+.terms-contact .btn-whatsapp-solid {
+    flex: 0 0 auto;
+    min-width: 192px;
+    justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+    .terms-intro {
+        padding: 34px 0 28px;
+    }
+
+    .terms-card {
+        padding: 28px 24px;
+    }
+
+    .terms-contact {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .terms-contact .btn-whatsapp-solid {
+        width: 100%;
+    }
+}
+
 /* ==========================================================================
    NAVBAR (MOVUS STYLE PILL HEADER)
    ========================================================================== */

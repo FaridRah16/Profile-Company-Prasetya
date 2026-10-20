@@ -47,8 +47,8 @@ $active_nav = isset($active_nav) ? $active_nav : 'home';
                 <div class="container-fluid p-0">
                     <!-- Brand Logo -->
                     <a class="navbar-brand" href="index.php">
-                        <img src="assets/images/logo.png" alt="PT PRASETYA MULTICAR INDO" class="navbar-logo-img">
-                        <span>PT PRASETYA MULTICAR INDO</span>
+                        <img src="assets/images/logo.png" alt="Prasetya Rent Car" class="navbar-logo-img">
+                        <span>Prasetya Rent Car</span>
                     </a>
 
 
@@ -68,6 +68,11 @@ $active_nav = isset($active_nav) ? $active_nav : 'home';
                             <li class="nav-item">
                                 <a class="nav-link <?= ($active_nav === 'cars') ? 'active' : '' ?>" href="cars.php">
                                     <i class="bi bi-grid-fill d-lg-none me-1"></i> Katalog Armada
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <?= ($active_nav === 'terms') ? 'active' : '' ?>" href="terms.php">
+                                    <i class="bi bi-file-earmark-text d-lg-none me-1"></i> Syarat & Ketentuan
                                 </a>
                             </li>
                             <li class="nav-item">

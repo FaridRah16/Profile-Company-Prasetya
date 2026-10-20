@@ -10,8 +10,8 @@ if (!defined('COMPANY_NAME')) {
                 <!-- Col 1: Brand Info -->
                 <div class="col-lg-4 col-md-6">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <img src="assets/images/logo.png" alt="PT PRASETYA MULTICAR INDO" class="navbar-logo-img">
-                        <h4 class="text-white mb-0">PT PRASETYA MULTICAR INDO</h4>
+                        <img src="assets/images/logo.png" alt="Prasetya Rent Car" class="navbar-logo-img">
+                        <h4 class="text-white mb-0">Prasetya Rent Car</h4>
                     </div>
 
                     <p class="text-white small pe-lg-4">
@@ -36,6 +36,7 @@ if (!defined('COMPANY_NAME')) {
                     <ul class="footer-link-list">
                         <li><a href="index.php#beranda"><i class="bi bi-chevron-right small"></i> Beranda</a></li>
                         <li><a href="cars.php"><i class="bi bi-chevron-right small"></i> Katalog Armada</a></li>
+                        <li><a href="terms.php"><i class="bi bi-chevron-right small"></i> Syarat & Ketentuan</a></li>
                         <li><a href="about.php"><i class="bi bi-chevron-right small"></i> Tentang Kami</a></li>
                         <li><a href="contact.php"><i class="bi bi-chevron-right small"></i> Kontak & Lokasi</a></li>
                     </ul>
@@ -75,7 +76,7 @@ if (!defined('COMPANY_NAME')) {
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="mb-0">&copy; <?= date('Y') ?> <strong><?= COMPANY_LEGAL ?> (<?= COMPANY_NAME ?>)</strong>. All Rights Reserved. Solusi Rental Mobil Terbaik & Nyaman.</p>
+                <p class="mb-0">&copy; <?= date('Y') ?> <strong><?= COMPANY_LEGAL ?></strong>. All Rights Reserved. Solusi Rental Mobil Terbaik & Nyaman.</p>
             </div>
 
         </div>

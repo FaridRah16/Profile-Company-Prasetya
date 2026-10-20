@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/data/cars.php';
 
-$page_title = 'Katalog - PT PRASETYA MULTICAR INDO';
+$page_title = 'Katalog - Prasetya Rent Car';
 $active_nav = 'cars';
 $all_cars = get_all_cars();
 
@@ -141,7 +141,6 @@ require_once __DIR__ . '/includes/header.php';
             <h2 class="section-title">Persyaratan Rental Mobil</h2>
             <p class="section-subtitle">Siapkan dokumen sesuai jenis layanan yang Anda pilih.</p>
         </div>
-
         <div class="row g-4 align-items-stretch">
             <div class="col-lg-6">
                 <article class="card h-100 p-4 p-md-5 rounded-4 shadow-sm" style="border: 2px solid #e8ef27;">

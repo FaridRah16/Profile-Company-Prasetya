@@ -5,7 +5,7 @@
  */
 
 // Konfigurasi Perusahaan
-define('COMPANY_LEGAL', 'PT PRASETYA MULTICAR INDO');
+define('COMPANY_LEGAL', 'Prasetya Rent Car');
 define('COMPANY_NAME', 'Prasetya Rent Car');
 define('COMPANY_ESTABLISHED', '2022');
 define('COMPANY_CATEGORY', 'Jasa Rental Mobil');

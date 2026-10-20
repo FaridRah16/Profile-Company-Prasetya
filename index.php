@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/data/cars.php';
 
-$page_title = 'Beranda - PT PRASETYA MULTICAR INDO | ' . COMPANY_NAME;
+$page_title = 'Beranda - Prasetya Rent Car | ' . COMPANY_NAME;
 $active_nav = 'home';
 $featured_cars = get_featured_cars(6);
 $services = get_company_services();
@@ -81,7 +81,7 @@ require_once __DIR__ . '/includes/header.php';
             <span class="section-badge">Armada Pilihan</span>
             <h2 class="section-title">Armada Mobil Unggulan</h2>
             <p class="section-subtitle">
-                Kendaraan prima yang selalu terawat berkala dengan standar kebersihan higienis, siap menemani setiap momen mobilitas Anda.
+                Kendaraan prima yang selalu terawat berkala dengan standar kebersihan, siap menemani setiap momen mobilitas Anda.
             </p>
         </div>
 
@@ -205,7 +205,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <div class="col-lg-6">
                 <div class="position-relative">
-                    <img src="assets/images/hero-bg.jpg" alt="Armada PT Prasetya Multicar Indo" class="img-fluid rounded-4 shadow-lg border" style="object-fit: cover; width: 100%; max-height: 420px;">
+                    <img src="assets/images/hero-bg.jpg" alt="Armada Prasetya Rent Car" class="img-fluid rounded-4 shadow-lg border" style="object-fit: cover; width: 100%; max-height: 420px;">
                     <div class="position-absolute bottom-0 start-0 p-3 m-3 bg-dark bg-opacity-75 text-white rounded-3 backdrop-blur" style="max-width: 80%;">
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-shield-fill-check text-danger fs-4"></i>

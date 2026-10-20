@@ -60,7 +60,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <div class="col-lg-6">
                 <div class="position-relative">
-                    <img src="assets/images/hero-bg.jpg" alt="Armada PT Prasetya Multicar Indo" class="img-fluid rounded-4 shadow-lg border" style="object-fit: cover; width: 100%;">
+                    <img src="assets/images/hero-bg.jpg" alt="Armada Prasetya Rent Car" class="img-fluid rounded-4 shadow-lg border" style="object-fit: cover; width: 100%;">
                     <div class="position-absolute bottom-0 start-0 p-3 m-3 bg-dark bg-opacity-75 text-white rounded-3" style="max-width: 85%;">
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-shield-check text-danger fs-3"></i>
