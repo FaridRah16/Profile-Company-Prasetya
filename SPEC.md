@@ -39,7 +39,7 @@ V11: replaced/deleted upload → its managed file removed; bundled `assets/image
 id|status|task|cites
 T1|x|add DB schema, PDO config, legacy catalog seed, admin setup docs|I.sql,I.module,V2,V6,V9
 T2|x|replace catalog provider; preserve company config + public helpers/pages|I.page,I.module,V6,V8,V9
-T3|.|add session auth, login/logout, CSRF helpers|I.page,V1,V2,V5,V10
+T3|x|add session auth, login/logout, CSRF helpers|I.page,V1,V2,V5,V10
 T4|.|build private dashboard + car CRUD + image lifecycle|I.page,I.dir,V1,V3,V4,V5,V11
 T5|.|verify PHP syntax, seed, public catalog, admin controls|V1,V2,V3,V4,V5,V6,V7,V8,V9,V10,V11
 
