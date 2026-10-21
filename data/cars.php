@@ -563,27 +563,19 @@ $cars = [
     ],
 ];
 
+require_once __DIR__ . '/../includes/car-repository.php';
+
 // Helper Functions
 function get_all_cars() {
-    global $cars;
-    return $cars;
+    return car_repository_all();
 }
 
 function get_car_by_id($id) {
-    global $cars;
-
-    foreach ($cars as $car) {
-        if ((int) $car['id'] === (int) $id) {
-            return $car;
-        }
-    }
-
-    return null;
+    return car_repository_find((int) $id);
 }
 
 function get_featured_cars($limit = 6) {
-    global $cars;
-    return array_slice($cars, 0, $limit);
+    return car_repository_featured((int) $limit);
 }
 
 function format_rupiah($nominal) {

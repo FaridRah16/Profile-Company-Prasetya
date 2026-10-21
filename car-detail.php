@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/data/cars.php';
 
-$car_id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
+$car_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $car = get_car_by_id($car_id);
 
 if (!$car) {
@@ -39,8 +39,10 @@ require_once __DIR__ . '/includes/header.php';
                     <span class="car-type-badge position-absolute" style="top: 20px; left: 20px;">
                         <?= htmlspecialchars($car['type']) ?>
                     </span>
-                    <span class="car-status-pill car-status-available position-absolute" style="top: 20px; right: 20px;">
-                        <i class="bi bi-check-circle-fill me-1"></i> Unit Tersedia
+                    <?php $isAvailable = $car['status'] === 'available'; ?>
+                    <span class="car-status-pill <?= $isAvailable ? 'car-status-available' : 'car-status-rented' ?> position-absolute" style="top: 20px; right: 20px;">
+                        <i class="bi <?= $isAvailable ? 'bi-check-circle-fill' : 'bi-clock-history' ?> me-1"></i>
+                        <?= $isAvailable ? 'Unit Tersedia' : ($car['status'] === 'maintenance' ? 'Dalam Perawatan' : 'Unit Tidak Tersedia') ?>
                     </span>
                     <img src="<?= htmlspecialchars($car['image']) ?>" alt="<?= htmlspecialchars($car['name']) ?>" class="img-fluid">
                 </div>

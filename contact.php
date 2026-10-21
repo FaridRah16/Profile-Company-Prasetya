@@ -112,7 +112,7 @@ require_once __DIR__ . '/includes/header.php';
                                 <select class="form-select" id="cfCar">
                                     <option value="" selected>-- Pilih Mobil (Bisa Dikosongkan) --</option>
                                     <?php foreach ($all_cars as $c): ?>
-                                        <option value="<?= htmlspecialchars($c['name']) ?>"><?= htmlspecialchars($c['name']) ?> (<?= format_rupiah($c['price_per_day']) ?>/hari)</option>
+                                        <option value="<?= htmlspecialchars($c['name']) ?>"><?= htmlspecialchars($c['name']) ?> (<?= htmlspecialchars(get_car_price_label($c)) ?><?= !empty($c['price_per_day']) ? '/hari' : '' ?>)</option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>

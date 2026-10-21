@@ -76,8 +76,10 @@ require_once __DIR__ . '/includes/header.php';
                             <!-- Car Image with Status & Badge -->
                             <div class="car-image-container">
                                 <span class="car-type-badge"><?= htmlspecialchars($car['type']) ?></span>
-                                <span class="car-status-pill car-status-available">
-                                    <i class="bi bi-check-circle-fill me-1"></i> Tersedia
+                                <?php $isAvailable = $car['status'] === 'available'; ?>
+                                <span class="car-status-pill <?= $isAvailable ? 'car-status-available' : 'car-status-rented' ?>">
+                                    <i class="bi <?= $isAvailable ? 'bi-check-circle-fill' : 'bi-clock-history' ?> me-1"></i>
+                                    <?= $isAvailable ? 'Tersedia' : ($car['status'] === 'maintenance' ? 'Perawatan' : 'Tidak Tersedia') ?>
                                 </span>
                                 <img src="<?= htmlspecialchars($car['image']) ?>" alt="<?= htmlspecialchars($car['name']) ?>" loading="lazy">
                             </div>
