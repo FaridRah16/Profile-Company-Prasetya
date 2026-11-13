@@ -42,16 +42,16 @@ foreach ($schemaStatements as $statement) {
 $insertCar = $database->prepare(
     'INSERT IGNORE INTO cars (
         id, name, brand, type, year, color, price_per_day, price_label, status, image,
-        seats, luggage_capacity, transmission, fuel, badge, description, features
+        seats, luggage_capacity, transmission, fuel, badge, description, features, sort_order
     ) VALUES (
         :id, :name, :brand, :type, :year, :color, :price_per_day, :price_label, :status, :image,
-        :seats, :luggage_capacity, :transmission, :fuel, :badge, :description, :features
+        :seats, :luggage_capacity, :transmission, :fuel, :badge, :description, :features, :sort_order
     )'
 );
 
 $database->beginTransaction();
 try {
-    foreach ($cars as $car) {
+    foreach ($cars as $index => $car) {
         $insertCar->execute([
             'id' => $car['id'],
             'name' => $car['name'],
@@ -70,6 +70,7 @@ try {
             'badge' => $car['badge'] ?? null,
             'description' => $car['description'],
             'features' => json_encode($car['features'], JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE),
+            'sort_order' => ($index + 1) * 10,
         ]);
     }
 

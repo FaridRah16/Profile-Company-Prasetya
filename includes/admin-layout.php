@@ -17,6 +17,7 @@ function admin_page_start(string $title, array $admin): void
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= admin_html($title) ?> | Admin Prasetya Rent Car</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">

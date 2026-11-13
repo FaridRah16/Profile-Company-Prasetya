@@ -12,3 +12,7 @@ Thumbs.db
 /.claude/
 /.cursor/
 /screenshot_*.png
+/uploads/cars/*
+!/uploads/cars/.gitkeep
+/SPEC.md
+/ADMIN-SETUP.md

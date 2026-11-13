@@ -25,8 +25,10 @@ CREATE TABLE IF NOT EXISTS cars (
     badge VARCHAR(100) NULL,
     description TEXT NOT NULL,
     features JSON NOT NULL,
+    sort_order INT NOT NULL DEFAULT 0,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     INDEX idx_cars_status (status),
-    INDEX idx_cars_type (type)
+    INDEX idx_cars_type (type),
+    INDEX idx_cars_sort_order (sort_order)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
