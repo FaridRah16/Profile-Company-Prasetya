@@ -5,11 +5,11 @@ declare(strict_types=1);
 function database_settings(): array
 {
     $settings = [
-        'host' => '127.0.0.1',
-        'port' => '3306',
+        'host' => 'db.fr-roub1.bengt.wasmernet.com',
+        'port' => '20184',
         'name' => 'prasetya_rent_car',
-        'user' => 'root',
-        'password' => '',
+        'user' => 'user_16405dfe',
+        'password' => 'pw_RwoE5uMK1Zt5gVGqh61JmPfU4abf6HLI',
         'charset' => 'utf8mb4',
     ];
 

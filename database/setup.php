@@ -12,7 +12,7 @@ require_once __DIR__ . '/../data/cars.php';
 
 $options = getopt('', ['email:', 'password:', 'name::']);
 if (empty($options['email']) || empty($options['password'])) {
-    fwrite(STDERR, "Usage: php database/setup.php --email=admin@example.com --password=strong-password [--name=Administrator]\n");
+    fwrite(STDERR, "Usage: php database/setup.php --email=ptprasetyamulticarindo@gmail.com --password=strong-password [--name=Administrator]\n");
     exit(1);
 }
 

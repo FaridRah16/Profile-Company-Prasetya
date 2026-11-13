@@ -65,7 +65,7 @@ if (!defined('COMPANY_NAME')) {
                     </div>
                     <div class="footer-contact-item">
                         <i class="bi bi-envelope-fill"></i>
-                        <span class="small"><?= COMPANY_EMAIL ?></span>
+                        <a href="mailto:<?= COMPANY_EMAIL ?>" class="text-white text-decoration-none small"><?= COMPANY_EMAIL ?></a>
                     </div>
                     <div class="footer-contact-item">
                         <i class="bi bi-clock-fill"></i>

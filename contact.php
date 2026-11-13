@@ -69,7 +69,41 @@ require_once __DIR__ . '/includes/header.php';
                         </div>
                         <div>
                             <h6 class="fw-bold text-dark mb-1">Email Resmi</h6>
-                            <p class="text-muted small mb-0"><?= COMPANY_EMAIL ?></p>
+                            <a href="mailto:<?= COMPANY_EMAIL ?>" class="text-primary small fw-semibold text-decoration-none">
+                                <?= COMPANY_EMAIL ?>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram Card -->
+                <div class="card p-3 border-0 rounded-4 shadow-sm bg-white mb-3">
+                    <div class="d-flex align-items-start gap-3">
+                        <div class="feature-icon-wrapper mb-0" style="width: 46px; height: 46px; font-size: 1.3rem; background: rgba(225, 48, 108, 0.12); color: #e1306c;">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold text-dark mb-1">Instagram Resmi</h6>
+                            <p class="text-muted small mb-1"><?= COMPANY_INSTAGRAM_HANDLE ?></p>
+                            <a href="<?= COMPANY_INSTAGRAM ?>" target="_blank" rel="noopener" class="small fw-bold text-decoration-none" style="color: #e1306c;">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Kunjungi Instagram Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TikTok Card -->
+                <div class="card p-3 border-0 rounded-4 shadow-sm bg-white mb-3">
+                    <div class="d-flex align-items-start gap-3">
+                        <div class="feature-icon-wrapper mb-0" style="width: 46px; height: 46px; font-size: 1.3rem; background: rgba(1, 1, 1, 0.08); color: #010101;">
+                            <i class="bi bi-tiktok"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold text-dark mb-1">TikTok Resmi</h6>
+                            <p class="text-muted small mb-1"><?= COMPANY_TIKTOK_HANDLE ?></p>
+                            <a href="<?= COMPANY_TIKTOK ?>" target="_blank" rel="noopener" class="small fw-bold text-dark text-decoration-none">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Tonton Konten di TikTok
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,11 @@ define('COMPANY_CATEGORY', 'Jasa Rental Mobil');
 define('COMPANY_TAGLINE', 'Solusi Rental Mobil Terpercaya & Profesional');
 define('COMPANY_PHONE', '+62 812-1309-2043');
 define('COMPANY_WHATSAPP', '6281213092043'); // Format tanpa '+' untuk link wa.me
-define('COMPANY_EMAIL', 'info@prasetyarentcar.com');
+define('COMPANY_EMAIL', 'ptprasetyamulticarindo@gmail.com');
+define('COMPANY_INSTAGRAM', 'https://www.instagram.com/prasetya.rent.car/');
+define('COMPANY_INSTAGRAM_HANDLE', '@prasetya.rent.car');
+define('COMPANY_TIKTOK', 'https://www.tiktok.com/@prasetya.rent.car');
+define('COMPANY_TIKTOK_HANDLE', '@prasetya.rent.car');
 define('COMPANY_ADDRESS', 'Jalan Simpang 5 Pondok Petir, Sawangan, Depok, Jawa Barat 16517');
 define('COMPANY_HOURS', '24 Jam Nonstop (Senin - Minggu)');
 
@@ -379,6 +383,24 @@ $cars = [
         'fuel' => 'Bensin',
         'badge' => 'LMPV',
         'description' => 'LMPV modern dengan kabin lega untuk perjalanan keluarga dan aktivitas harian.',
+        'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
+    ],
+    [
+        'id' => 35,
+        'name' => 'Hyundai Stargazer Cartenz Prime',
+        'brand' => 'Hyundai',
+        'type' => 'LMPV',
+        'year' => null,
+        'color' => null,
+        'price_per_day' => 550000,
+        'status' => 'available',
+        'image' => 'assets/images/cars/Hyundai Stargazer Cartenz Prime.png',
+        'seats' => 7,
+        'luggage_capacity' => null,
+        'transmission' => 'Automatic',
+        'fuel' => 'Bensin',
+        'badge' => 'LMPV',
+        'description' => 'LMPV modern dan elegan dengan kabin lega untuk perjalanan keluarga dan mobilitas harian.',
         'features' => ['Kapasitas 7 penumpang', 'Transmisi automatic', 'Bahan bakar Bensin']
     ],
     [
